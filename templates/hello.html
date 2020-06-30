@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body {
+  background-color: pink;
+}
+
+p {
+  color: white;
+  p-align: center;
+}
+ p.ex2 {
+  font-size: 200px;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+
+     {% if name in [5, 14, 16, 18, 21, 23] %}
+
+
+    <p class="ex2">FRIENDS</p>
+
+
+    {% elif name in [3, 10, 19] %}
+
+     <p class="ex2">LOVER</p>
+
+         <i class="fas fa-heart"></i>
+
+
+
+    {% elif name in [8, 12, 13, 17] %}
+        <p class="ex2">AFFECTION</p>
+
+    {% elif name in [6, 11, 15, 26] %}
+     <p class="ex2">MARRIAGE</p>
+
+    {% elif name in [2, 4, 7, 9, 20, 22, 24, 25] %}
+     <p class="ex2">ENEMY</p>
+
+
+    {% else %}
+     <p class="ex2">SIBILINGS</p>
+
+
+       {% endif %}
+
+</body>
+</html>
+
