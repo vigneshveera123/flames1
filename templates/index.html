@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <style>
-body {
-  background-color: pink;
+   body {
+  background-image: url({{ url_for('static', filename='la.jpeg') }})
 }
 
+
 p {
-  color: white;
+  color: black;
   p-align: center;
 }
  p.ex2 {
@@ -28,11 +29,12 @@ p {
     <p class="ex2">FRIENDS</p>
 
 
+
+
     {% elif name in [3, 10, 19] %}
 
-     <p class="ex2">LOVER</p>
 
-         <i class="fas fa-heart"></i>
+              <p class="ex2">LOVER</p>
 
 
 

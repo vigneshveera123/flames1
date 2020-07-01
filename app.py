@@ -1,8 +1,10 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, url_for
 
 
 
 app=Flask(__name__)
+
+
 
 @app.route('/flames')
 
@@ -10,7 +12,7 @@ def flames():
     return render_template("flames.html")
 
 
-@app.route('/login',methods=['post'])
+@app.route('/index',methods=['POST'])
 
 
 def Flames():
@@ -27,7 +29,7 @@ def Flames():
     g = len(c)
 
     if your_name != " ":
-        return render_template('hello.html',name=g)
+        return render_template('index.html',name=g)
 
 
 
