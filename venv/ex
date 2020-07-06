@@ -1,0 +1,8 @@
+details = request.form
+        user_name = details['user_name']
+        password = details['password']
+        cur = mysql.connection.cursor()
+        this_query = "insert into login_table (user_name, password) values (%s,%s)"
+        cur.execute(this_query,[user_name,password])
+        mysql.connection.commit()
+        cur.close()

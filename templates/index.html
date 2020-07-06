@@ -6,7 +6,6 @@
   background-image: url({{ url_for('static', filename='la.jpeg') }})
 }
 
-
 p {
   color: black;
   p-align: center;
@@ -18,42 +17,9 @@ p {
 </style>
 </head>
 
-
-
 <body>
-
-
-     {% if name in [5, 14, 16, 18, 21, 23] %}
-
-
-    <p class="ex2">FRIENDS</p>
-
-
-
-
-    {% elif name in [3, 10, 19] %}
-
-
-              <p class="ex2">LOVER</p>
-
-
-
-    {% elif name in [8, 12, 13, 17] %}
-        <p class="ex2">AFFECTION</p>
-
-    {% elif name in [6, 11, 15, 26] %}
-     <p class="ex2">MARRIAGE</p>
-
-    {% elif name in [2, 4, 7, 9, 20, 22, 24, 25] %}
-     <p class="ex2">ENEMY</p>
-
-
-    {% else %}
-     <p class="ex2">SIBILINGS</p>
-
-
-       {% endif %}
-
+    <p class="ex2">{{ name }}</p>
+<a href="http://127.0.0.1:5000/flames"><button>GO TO HOME PAGE</button></a>
 </body>
 </html>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<body>
+
+<h1>FLAMES DETAILS</h1>
+<table border="3">
+    <tr>
+        <th>id</th>
+        <th>name one</th>
+        <th>name two</th>
+        <th>result</th>
+        <th>date time</th>
+
+    </tr>
+    {%for table in tables%}
+        <tr>
+        <td>{{ table.id }}</td>
+        <td>{{ table.name_one }}</td>
+        <td>{{ table.name_two }}</td>
+        <td>{{ table.result }}</td>
+        <td>{{ table.created_at }}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
