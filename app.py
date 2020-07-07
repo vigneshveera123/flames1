@@ -95,6 +95,8 @@ def newlogin():
         cur.execute(this_query,[user_name,password])
         mysql.connection.commit()
         cur.close()
+        return redirect('login')
+
     return render_template("newlogin.html")
 
 
@@ -107,7 +109,37 @@ def admin():
     if session.get('logged_in'):
         return render_template("admin.html",tables=info)
     else:
-        return redirect(url_for('newlogin'))
+        return redirect(url_for('login'))
+
+
+@app.route('/edit/<string:id>',methods=["POST","GET"])
+def edit(id):
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    if request.method == "POST":
+        details = request.form
+        first_name = details['your_name']
+        last_name = details['couple_name']
+        re = details['result']
+        this_query = "update logs set name_one=%s,name_two=%s,result=%s where log_id=%s"
+        cur.execute(this_query,[first_name,last_name,re,id])
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for("admin"))
+        cur = mysql.connection.cursor()
+
+    qeu="select * from logs where log_id=%s"
+    cur.execute(qeu,[id])
+    res=cur.fetchone()
+    return render_template("edit.html",datas=res)
+
+@app.route('/delete/<string:id>',methods=["POST","GET"])
+def delete(id):
+    cur = mysql.connection.cursor()
+    sql="delete from logs where log_id=%s"
+    cur.execute(sql,[id])
+    mysql.connection.commit()
+    cur.close()
+    return redirect(url_for("admin"))
 
 
 

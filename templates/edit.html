@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+
+<body>
+<div style="margin-top:30vh;margin-left:30vw;">
+<form action=" " method="POST">
+
+    <label for="YOUR_NAME">YOUR NAME</label><br>
+    <input type="text" name="your_name" title="YOUR NAME" placeholder="YOUR NAME" value="{{ datas.name_one }}" required>
+<br>
+<br>
+    <label for="YOUR CAPLE NAME" >YOUR CAPLE NAME</label><br>
+    <input type="text" name="couple_name" title="YOUR COUPLE NAME" placeholder="YOUR COUPLE NAME" value="{{ datas.name_two }}" required>
+        <br>
+        <br>
+    <label for="result" >RESULT</label><br>
+    <input type="text" name="result" title="RESULT" placeholder="RESULT" value="{{ datas.result }}" required>
+        <br>
+    <br>
+    <br>
+        <button type="submit" class="button" value="update details">EDIT</button>
+</form>
+</div>
+</body>
+</html>

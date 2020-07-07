@@ -15,15 +15,19 @@
         <th>name two</th>
         <th>result</th>
         <th>date time</th>
+        <th>EDIT</th>
+        <th>Delete</th>
 
     </tr>
     {%for table in tables%}
         <tr>
-        <td>{{ table.id }}</td>
+        <td>{{ table.log_id }}</td>
         <td>{{ table.name_one }}</td>
         <td>{{ table.name_two }}</td>
         <td>{{ table.result }}</td>
         <td>{{ table.created_at }}</td>
+        <td><a href="{{ url_for('edit',id=table.log_id) }}">EDIT</a> </td>
+        <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('delete',id=table.log_id) }}">DELETE</a></td>
 
         </tr>
     {% endfor %}
