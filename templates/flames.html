@@ -5,39 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flames</title>
 
+
 </head>
-<style>
-    body {background-image: url({{ url_for('static', filename='button.jpeg') }})}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='first.css') }}">
 
-    .button2{
-    padding: 0px;
-    display:block;
-    color: black;
-    text-align:center;
-    position: absolute;
-    top: 10px;
-    right: 10px;}
-
-</style>
 <body>
-<div style="margin-top:30vh;margin-left:30vw;">
-    <form action="/login" methods=["POST","GET"]>
-    <button class="button2" type="submit">login</button>
+<form action="/login" methods=["POST","GET"]>
+    <button class="lbutton" type="submit">login</button>
         </form>
-
-
-    <form action="/index" method="POST">
-
-    <label for="YOUR_NAME">YOUR NAME</label><br>
+<div class="main">
+    <form action="/index" method="POST"> 
+        <img src="{{ url_for("static",filename='flames.png')}}">
+        <br>
+        <br>
     <input type="text" name="your_name" title="YOUR NAME" placeholder="YOUR NAME" required>
 <br>
 <br>
-    <label for="YOUR CAPLE NAME" >YOUR CAPLE NAME</label><br>
+
     <input type="text" name="couple_name" title="YOUR COUPLE NAME" placeholder="YOUR COUPLE NAME" required>
         <br>
         <br>
         <br>
-        <button type="submit" class="button">Submit</button>
+        <button type="submit" class="submitbutton">Submit</button>
 </form>
 </div>
 </body>

@@ -4,50 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flames</title>
-
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='first.css') }}">
+    
 
 </head>
 
-<style>
-
-
-    .button2{
-    padding: 0px;
-    display:block;
-    color: black;
-    text-align:center;
-    position: absolute;
-    top: 10px;
-    right: 10px;}
-
-</style>
-
-
 <body>
+    <div class="login">
 
 <form action="/newlogin" methods=["POST","GET"]>
-    <button class="button2" type="submit">SIGN UP</button>
+    <button class="buttonsign" type="submit">SIGN UP</button>
         </form>
-<div style="margin-top:30vh;margin-left:30vw;">
+<div class="logpage">
 
     <form action="/login" method="POST">
-        <h1>LOGIN</h1>
+        <img src="{{ url_for('static',filename='logo.png') }}">
+        <br>
 
-    <label for="user_name">USER NAME</label><br>
-    <input type="text" name="user_name" id="user_name" title="USER NAME" placeholder="user name" >
+
+    <input type="text" name="user_name" id="user_name" title="USER NAME" placeholder="USER NAME" >
 <br>
 <br>
-    <label for="password" >PASSWORD</label><br>
-    <input type="password" name="password" title="PASSWORD" placeholder="password">
+
+    <input type="password" name="password" title="PASSWORD" placeholder="PASSWORD">
         <br>
         <br>
         <br>
-        <button type="submit" class="button">login</button>
+        <button type="submit" class="buttonlogin">LOGIN</button>
+
 
 
 </form>
 </div>
-
+</div>
 
 </body>
 </html>

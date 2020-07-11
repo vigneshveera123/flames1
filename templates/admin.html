@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+
+    <!-- CSS only -->
+
+
 </head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='first.css') }}">
 <body>
 
+<form action="/log_out">
+    <button type="submit" class="logoutbutton">LOG OUT</button>
+</form>
+
 <h1>FLAMES DETAILS</h1>
-<table border="3">
-    <tr>
-        <th>id</th>
+<div class="table">
+<table class="table table-stripped table-boarded">
+<thead>
+  <tr>
+        <th>s.no</th>
         <th>name one</th>
         <th>name two</th>
         <th>result</th>
         <th>date time</th>
         <th>EDIT</th>
         <th>Delete</th>
-
     </tr>
-    {%for table in tables%}
+</thead>
+<tbody>
+ {%for table in tables%}
         <tr>
         <td>{{ table.log_id }}</td>
         <td>{{ table.name_one }}</td>
         <td>{{ table.name_two }}</td>
         <td>{{ table.result }}</td>
         <td>{{ table.created_at }}</td>
-        <td><a href="{{ url_for('edit',id=table.log_id) }}">EDIT</a> </td>
-        <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('delete',id=table.log_id) }}">DELETE</a></td>
+        <td><a href="{{ url_for('edit',id=table.log_id) }}"><button class="editbutton">EDIT  </button></a> </td>
+        <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('delete',id=table.log_id) }}"><button class="deletebutton">DELETE</button></a></td>
 
         </tr>
     {% endfor %}
+</tbody>
 </table>
+</div>
+
+
 </body>
 </html>

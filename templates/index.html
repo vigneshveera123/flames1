@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-   body {
-  background-image: url({{ url_for('static', filename='la.jpeg') }})
-}
-
-p {
-  color: black;
-  p-align: center;
-}
- p.ex2 {
-  font-size: 200px;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='first.css') }}">
 </head>
 
 <body>
-    <p class="ex2">{{ name }}</p>
-<a href="http://127.0.0.1:5000/flames"><button>GO TO HOME PAGE</button></a>
+    <h1 class="re">{{ name }}</h1>
+<div class="main">
+    {% if name=="FRIENDS" %}
+    <img src="{{ url_for("static",filename='friends.jpeg') }}">
+
+    {% elif name=="LOVERS" %}
+    <img src="{{ url_for("static",filename='lo.jpeg') }}">
+
+
+    {% elif name=="AFFECTION" %}
+    <img src="{{ url_for("static",filename='aff.png') }}">
+
+    {% elif name=="MARRIAGE" %}
+    <img src="{{ url_for("static",filename='mari.png') }}">
+
+
+    {% elif name=="ENEMY" %}
+    <img src="{{ url_for("static",filename="e.png") }}">
+
+
+    {% else %}
+    <img src="{{ url_for("static",filename='sister.png') }}"><br>
+
+    {% endif %}
+
+</div>
+<a href="http://127.0.0.1:5000/flames"><button class="home">GO TO HOME PAGE</button></a>
 </body>
 </html>
 
